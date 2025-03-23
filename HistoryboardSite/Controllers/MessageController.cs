@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using NewsSite.Contract;
 using NewsSite.DataAccess;
 using NewsSite.Models;
@@ -23,17 +22,8 @@ namespace NewsSite.Controllers
         {
             var messages = dbContext.Messages;
             var sortedMessage = messages.OrderByDescending(time => time.PublishDate);
-            logger.LogWarning("Update storys");
-
 
             return View(sortedMessage.ToList());
-        }
-
-        [NonAction]
-        public ActionResult UpdateStory()
-        {
-
-            return View();
         }
 
         [HttpGet]
