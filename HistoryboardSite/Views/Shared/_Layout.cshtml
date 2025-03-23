@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>@ViewBag.Title - GrayHub</title>
+</head>
+<body>
+    <div style="padding: 15px; background: #f5f5f5; border-radius: 8px;">
+        <!-- Контейнер для кнопок -->
+        <div style="display: flex; gap: 10px;">
+            <a style="padding: 10px 4px; background: #d8d8d8; border: none; border-radius: 4px; color: black; cursor: pointer; text-decoration: none"
+               href="@Url.Action("Index", "Message" )">Главная</a>
+            <a style="padding: 10px 4px; background: #d8d8d8; border: none; border-radius: 4px; color: black; cursor: pointer; text-decoration: none"
+               href="@Url.Action("CreateMessage", "Message")">Создать историю</a>
+        </div>
+    </div>
+
+    @RenderBody()
+    <div style="position: fixed; bottom: 0;">
+        <hr/>
+        <p>&copy; @DateTime.Now.Year - GrayHub</p>
+    </div>
+</body>
+</html>
